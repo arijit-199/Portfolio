@@ -2,7 +2,6 @@
 // import "./login.scss";
 // import { AuthContext } from "../../context/auth/authContext";
 import { useContext, useState } from "react";
-import LoginBackground from "../../images/photo-1580820267682-426da823b514.avif";
 
 const Login = () => {
 
@@ -39,14 +38,12 @@ const Login = () => {
     <div className="login">
       <div className="card">
         <div className="left">
-          {/* <h1>Hello World.</h1>
+          <h1>Hello World.</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <span>Don't you have an account?</span>
-          <Link to="/register">
+          {/* <Link to="/register"> */}
             <button>Register</button>
-          </Link> */}
-
-          <img src={LoginBackground} alt=""/>
+          {/* </Link> */}
         </div>
         <div className="right">
           <h1>Login</h1>
