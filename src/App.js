@@ -12,6 +12,8 @@
 // import { AuthContext } from "./context/auth/authContext";
 // import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import "./App.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./pages/home/Home";
 
 
 function App() {
@@ -46,10 +48,16 @@ function App() {
 
   //   return children;
   // };
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />
+    }
+  ])
+
   return (
-    <div className="App">
-      <h1>Hello World!!!!!!!</h1>
-    </div>
+    <RouterProvider router={router}></RouterProvider>
   );
 };
 
