@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
 // import "./login.scss";
 // import { AuthContext } from "../../context/auth/authContext";
 import { useContext, useState } from "react";
@@ -13,7 +13,7 @@ const Login = () => {
   const [err, setErr] = useState(null);
   const [success, setSuccess] = useState(null);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
 //   const handleChange = (e) => {
 //     setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -41,9 +41,9 @@ const Login = () => {
           <h1>Hello World.</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <span>Don't you have an account?</span>
-          <Link to="/register">
+          {/* <Link to="/register"> */}
             <button>Register</button>
-          </Link>
+          {/* </Link> */}
         </div>
         <div className="right">
           <h1>Login</h1>

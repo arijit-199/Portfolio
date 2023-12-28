@@ -16,7 +16,7 @@ import { useContext, useState } from "react";
 // import { AuthContext } from "../../context/auth/authContext.js";
 // import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 // import { makeRequest } from "../../axios";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 // import Update from "../../components/update/Update.jsx";
 
 const Profile = () => {

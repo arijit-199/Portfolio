@@ -1,6 +1,6 @@
 // import "./register.scss";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import axios from "axios";
 
 const Register = () => {
@@ -40,9 +40,9 @@ const Register = () => {
           <h1>Arijit Social</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <span>Do you have an account?</span>
-          <Link to="/login">
+          {/* <Link to="/login"> */}
             <button>Login</button>
-          </Link>
+          {/* </Link> */}
         </div>
         <div className="right">
           <h1>Register</h1>
