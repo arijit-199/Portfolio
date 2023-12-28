@@ -11,7 +11,7 @@
 // import { DarkModeContext } from "./context/darkModeContext";
 // import { AuthContext } from "./context/auth/authContext";
 // import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { BrowserRouter, Link, Route, RouterProvider, Routes, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
@@ -51,22 +51,20 @@ function App() {
   //   return children;
   // };
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />
-    },
-    {
-      path: "/",
-      element: <Login />
-    },
-  ])
-
   return (
-    <RouterProvider router={router}></RouterProvider>
-    // <div className="">
-    //   <h1>Hello World!!!</h1>
-    // </div>
+    <div>
+      <BrowserRouter>
+        <nav>
+          <Link to="/path-a">Component A</Link> &nbsp;
+          <Link to="/path-b">Component B</Link>
+        </nav>
+
+        <Routes>
+          <Route path="/path-a" element={<h1>Hello Component A</h1>} />
+          <Route path="/path-b" element={<h1>Hello Component B</h1>} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 };
 
