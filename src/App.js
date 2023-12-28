@@ -11,7 +11,10 @@
 // import { DarkModeContext } from "./context/darkModeContext";
 // import { AuthContext } from "./context/auth/authContext";
 // import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
 
 
 
@@ -48,22 +51,22 @@ function App() {
   //   return children;
   // };
 
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <Home />
-  //   },
-  //   {
-  //     path: "/",
-  //     element: <Login />
-  //   },
-  // ])
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />
+    },
+    {
+      path: "/",
+      element: <Login />
+    },
+  ])
 
   return (
-    // <RouterProvider router={router}></RouterProvider>
-    <div className="App">
-      <h1>Hello World!!!</h1>
-    </div>
+    <RouterProvider router={router}></RouterProvider>
+    // <div className="">
+    //   <h1>Hello World!!!</h1>
+    // </div>
   );
 };
 
