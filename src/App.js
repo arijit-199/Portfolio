@@ -11,6 +11,7 @@
 // import { DarkModeContext } from "./context/darkModeContext";
 // import { AuthContext } from "./context/auth/authContext";
 // import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import "./App.css";
 
 
 function App() {
