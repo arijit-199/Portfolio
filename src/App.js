@@ -12,9 +12,9 @@
 // import { AuthContext } from "./context/auth/authContext";
 // import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import "./App.css";
-// import { RouterProvider, createBrowserRouter } from "react-router-dom";
-// import Home from "./pages/home/Home";
-// import Login from "./pages/login/Login"
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
 
 
 function App() {
@@ -50,22 +50,19 @@ function App() {
   //   return children;
   // };
 
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <Home />
-  //   },
-  //   {
-  //     path: "/login", 
-  //     element: <Login />
-  //   }
-  // ])
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />
+    },
+    {
+      path: "/login", 
+      element: <Login />
+    }
+  ])
 
   return (
-    // <RouterProvider router={router}></RouterProvider>
-    <div>
-      hello!!
-    </div>
+    <RouterProvider router={router}></RouterProvider>
   );
 };
 
