@@ -1,0 +1,102 @@
+.login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 728px;
+    align-items: center;
+    background: url("../../images/LoginBackground.jpg") center;
+    object-fit: contain;
+    width: 100%;
+
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 20px 35px;
+
+        h1 {
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: transparent;
+            gap: 30px;
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                .input {
+                    background: rgba(0, 0, 0, 0.6);
+                    outline: none;
+                    border: none;
+                    width: 200px;
+                    height: 35px;
+                    color: #c9c9c9;
+                    padding: 0px 10px;
+                }
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                button {
+                    margin: 0px 0px 0px 38px;
+                    background-color: #fb7b66;
+                    color: #000e11;
+                    font-weight: bold;
+                    padding: 10px 25px;
+                    border: none;
+                    display: flex;
+                    justify-content: flex-end;
+
+                    &:hover {
+                        background-color: #000e11;
+                        color: #dadada;
+                    }
+                }
+
+                span{
+                    font-size: 12px;
+                    color: #fff;
+                }
+            }
+
+            span {
+                color: #dadada;
+
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+
+            button {
+                margin: 0px 0px 0px 38px;
+                background-color: transparent;
+                color: #fff;
+                border: 2px solid #fb7b66;
+                font-weight: bold;
+                padding: 10px 25px;
+                display: flex;
+                justify-content: flex-end;
+
+                &:hover {
+                    background-color: #fb7b66;
+                    color: #000;
+                }
+            }
+        }
+    }
+}

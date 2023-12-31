@@ -1,0 +1,109 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    top: 115px;
+    height: calc(100vh - 175px);
+    overflow: scroll;
+    gap: 50px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    h1 {
+        color: #000;
+        font-weight: 600;
+        font-size: 90px;
+        font-family: cursive;
+
+    }
+
+    .content {
+        padding: 50px;
+        border: 2px solid black;
+
+        p {
+            width: 70%;
+            font-size: 34px;
+            font-weight: 400;
+            color: #000;
+            font-family: cursive;
+        }
+
+        .name {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    .skills {
+        margin: 100px -50px;
+        padding: 20px 40px 120px 50px;
+        display: flex;
+        flex-direction: column;
+        border-top: 1px groove #000;
+        border-bottom: 1px groove #000;
+        background-color: rgba(0, 0, 0, 0.7);
+        gap: 10px;
+
+        h1 {
+            color: #fff;
+        }
+
+        .skill {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+
+            .item {
+                border: 3px solid #fff;
+
+                p {
+                    padding: 10px 20px;
+                    margin: 10px;
+                    color: #fff;
+                    font-size: 30px;
+                    font-weight: 500;
+                    background-color: transparent;
+                    border-radius: 25px;
+                    font-family: cursive;
+                }
+            }
+        }
+    }
+
+    .works {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .work {
+            display: flex;
+            gap: 100px;
+
+            .item {
+                padding: 100px;
+                background-color: #1a3938;
+                border-radius: 20px;
+                color: #fff;
+                font-weight: bold;
+                font-size: 20px;
+                font-family: cursive;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    width: 90%;
+                    height: 95%;
+                    border-radius: 20px;
+                    background-color: #326967;
+                    position: absolute;
+                    top: 40px;
+                    right: 40px;
+                    z-index: -999;
+                }
+            }
+        }
+    }
+}
