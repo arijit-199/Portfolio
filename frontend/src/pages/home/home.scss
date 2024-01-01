@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta:700');
+
+$bg: rgb(3, 44, 44);
+$white: #fff;
+$black: rgb(3, 44, 44);
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65, 0, .076, 1)) {
+    transition: $property $duration $ease;
+}
+
 .home {
     display: flex;
     flex-direction: column;
@@ -20,20 +30,47 @@
     }
 
     .content {
-        padding: 50px;
-        border: 2px solid black;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 20px;
+        gap: 15px;
 
-        p {
-            width: 70%;
-            font-size: 34px;
-            font-weight: 400;
-            color: #000;
-            font-family: cursive;
+        .greet {
+            margin: 0px;
+            padding: 0px;
+
+            p {
+                width: 80%;
+                font-size: 30px;
+                font-weight: 400;
+                color: #000;
+                font-family: cursive;
+                line-height: 50px;
+                letter-spacing: 0.5px;
+            }
+
+            .name {
+                display: flex;
+                justify-content: flex-end;
+            }
         }
 
-        .name {
+        .img {
             display: flex;
-            justify-content: flex-end;
+            background-color: #fff;
+            padding: 4px;
+            align-items: center;
+            border-radius: 50%;
+
+
+            img {
+                width: 400px;
+                height: 400px;
+                object-fit: cover;
+                border-radius: 50%;
+
+            }
         }
     }
 
@@ -68,6 +105,7 @@
                     background-color: transparent;
                     border-radius: 25px;
                     font-family: cursive;
+                    letter-spacing: 2px;
                 }
             }
         }
@@ -80,28 +118,120 @@
 
         .work {
             display: flex;
+            flex-direction: row;
             gap: 100px;
 
             .item {
-                padding: 100px;
-                background-color: #1a3938;
-                border-radius: 20px;
+                background: linear-gradient(rgba(15, 13, 13, 0.7), rgba(4, 2, 2, 0.7)), url("../../images/pexels-veeterzy-303383.jpg") center;
+                object-fit: cover;
+                width: 350px;
+                height: 320px;
+                border: 3px solid #fff;
+                border-radius: 50px;
                 color: #fff;
                 font-weight: bold;
-                font-size: 20px;
+                font-size: 28px;
                 font-family: cursive;
-                position: relative;
+                letter-spacing: 1px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 5px;
+            }
+        }
 
-                &::before {
-                    content: "";
-                    width: 90%;
-                    height: 95%;
-                    border-radius: 20px;
-                    background-color: #326967;
+        button {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            outline: none;
+            border: 0;
+            vertical-align: middle;
+            text-decoration: none;
+            background: transparent;
+            padding: 0;
+            font-size: inherit;
+            font-family: inherit;
+            letter-spacing: 2px;
+
+            &.see-more {
+                width: 12rem;
+                height: auto;
+
+                .circle {
+                    @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+                    position: relative;
+                    display: block;
+                    margin: 0;
+                    width: 3rem;
+                    height: 3rem;
+                    background: $black;
+                    border-radius: 1.625rem;
+
+                    .icon {
+                        @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        background: $white;
+
+                        &.arrow {
+                            @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+                            left: 0.625rem;
+                            width: 1.125rem;
+                            height: 0.125rem;
+                            background: none;
+
+                            &::before {
+                                position: absolute;
+                                content: '';
+                                top: -0.25rem;
+                                right: 0.0625rem;
+                                width: 0.625rem;
+                                height: 0.625rem;
+                                border-top: 0.125rem solid #fff;
+                                border-right: 0.125rem solid #fff;
+                                transform: rotate(45deg);
+                            }
+                        }
+                    }
+                }
+
+                .button-text {
+                    @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
                     position: absolute;
-                    top: 40px;
-                    right: 40px;
-                    z-index: -999;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    padding: 0.75rem 0;
+                    margin: 0 0 0 1.85rem;
+                    color: $black;
+                    font-weight: 700;
+                    line-height: 1.6;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+            }
+
+            &:hover {
+                .circle {
+                    width: 100%;
+
+                    .icon {
+                        &.arrow {
+                            background: $white;
+                            transform: translate(1rem, 0);
+                        }
+                    }
+                }
+
+                .button-text {
+                    color: $white;
+                    letter-spacing: 2px;
                 }
             }
         }

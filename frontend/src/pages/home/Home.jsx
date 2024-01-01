@@ -1,24 +1,24 @@
 import "./home.scss";
-// import { useNavigate } from "react-router-dom";
+import profileImg from "../../images/pexels-veeterzy-303383.jpg";
+
 
 const Home = () => {
-
-  // const navigate = useNavigate();
-
-  // const handleClick = () => {
-  //   navigate("/login");
-  // }
 
   return (
     <div className="home">
       <div className="content">
-        <h1>
-          Your most welcome!
-        </h1>
-        <p>
-          Hey, its so nice to see you here! I very warm-heartedly greet you in my portfolio website, and want to sweeten your valuable time here. I hope you would surely like to explore, and that's why I try my best to make this a satisfying experience.
-        </p>
-        <p className="name">Arijit Ghosh</p>
+        <div className="greet">
+          <h1>
+            Your most welcome!
+          </h1>
+          <p>
+            Hey, its so nice to see you here! I very warm-heartedly greet you in my portfolio website, and want to sweeten your valuable time here. I hope you would surely like to explore, and that's why I try my best to make this a satisfying experience.
+          </p>
+          <p className="name">Arijit Ghosh</p>
+        </div>
+        <div className="img">
+          <img src={profileImg} alt="" />
+        </div>
       </div>
       <div className="skills">
         <h1>Skills</h1>
@@ -61,14 +61,22 @@ const Home = () => {
         <h1>Some works</h1>
         <div className="work">
           <div className="item">
-            Shoping Cart
+            Shopping cart
           </div>
           <div className="item">
-            Blog app
+            Blog
           </div>
           <div className="item">
-            Facebook clone
+            facebook clone
           </div>
+        </div>
+        <div className="container">
+          <button class="see-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">See More</span>
+          </button>
         </div>
       </div>
     </div>

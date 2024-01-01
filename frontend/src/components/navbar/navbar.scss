@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+$main-color: #23abd4;
+
 .navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(rgba(15, 13, 13, 0.6), rgba(4, 2, 2, 0.6));
-    color: azure;
+    background: linear-gradient(rgba(15, 13, 13, 0.7), rgba(4, 2, 2, 0.1));
     width: 100%;
     padding: 5px 20px;
     position: sticky;
@@ -13,49 +15,67 @@
     &::-webkit-scrollbar {
         display: none;
     }
-    
-    
+
+
     .left {
-        padding: 0px 30px;
+        padding: 0px 75px;
+
         h1 {
             font-size: 24px;
             font-weight: 600;
+            color: azure;
             text-transform: uppercase;
             cursor: pointer;
         }
     }
-    
-    .center {
-        input{
-            border: none;
-            outline: none;
-            background: linear-gradient(rgba(15, 15, 15, 0.9), rgba(4, 4, 4, 0.9));
-            color: white;
-            height: 30px;
-            width: 200px;
-            padding: 0px 8px;
-            
-        }
-    }
-    
-    .right {
+
+    #primary {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0px 100px;
-        
+        align-items: center;
+        justify-content: center;
+        padding: 0px 75px;
+
         .link {
-            text-decoration: none;
-            text-transform: uppercase;
-            color: white;
-            padding: 0px 20px;
-            font-weight: 400;
-            font-size: 20px;
-            
-            &:hover {
-                font-weight: 400;
-                text-decoration-line: underline;
-                text-underline-offset: 8px;
+            margin: 0 20px;
+            text-decoration:  none;
+
+
+            a {
+                text-decoration:  none;
+                padding: 5px 0; 
+                font-size: 18px;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                font-weight: 500;
+                position: relative;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-image: linear-gradient(to right,
+                        $main-color,
+                        $main-color 50%,
+                        #fff 50%);
+                background-size: 200% 100%;
+                background-position: -100%;
+                transition: all 0.3s ease-in-out;
+
+                &:before {
+                    content: '';
+                    width: 0;
+                    height: 2px;
+                    bottom: -3px;
+                    z-index: 0;
+                    position: absolute;
+                    background: $main-color;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover {
+                    background-position: 0%;
+
+                    &:before {
+                        width: 100%;
+                    }
+                }
             }
         }
     }
