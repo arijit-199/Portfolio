@@ -7,7 +7,7 @@
 }
 
 .layout {
-  background: linear-gradient(rgba(53, 60, 60, 0.2), rgba(53, 60, 60, 0.2)), url("./images/pexels-toni-cuenca-5back72487.jpg") center fixed;
+  background-color: #22252c;
   object-fit: cover;
   max-width: 100%;
   overflow: hidden;

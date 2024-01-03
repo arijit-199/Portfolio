@@ -1,21 +1,78 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
-$main-color: #23abd4;
+$main-color: #0ee8cf;
 
-.navbar {
+.sticky{
+    padding: 5px 20px;
+    background-color: $main-color;
+    transition: 1s;
+ 
+    #primary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 50px;
+
+        .link {
+            margin: 0 30px;
+            text-decoration: none;
+
+
+            a {
+                text-decoration: none;
+                padding: 5px 0px;
+                font-size: 16px;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                font-weight: 700;
+                position: relative;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-image: linear-gradient(to right,
+                        #000,
+                        #000 50%,
+                        #fff 50%);
+                background-size: 200% 100%;
+                background-position: -100%;
+                transition: 0.4s;
+
+                &:before {
+                    content: '';
+                    width: 0;
+                    height: 1.5px;
+                    bottom: -3px;
+                    z-index: 0;
+                    position: absolute;
+                    background: #000;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover {
+                    background-position: 0%;
+
+                    &:before {
+                        width: 100%;
+
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(rgba(15, 13, 13, 0.7), rgba(4, 2, 2, 0.1));
     width: 100%;
-    padding: 5px 20px;
-    position: sticky;
+    padding: 20px 20px;
+    position: fixed;
+    transition: 0.6s;
     z-index: 999;
 
     &::-webkit-scrollbar {
         display: none;
     }
-
 
     .left {
         padding: 0px 75px;
@@ -23,7 +80,7 @@ $main-color: #23abd4;
         h1 {
             font-size: 24px;
             font-weight: 600;
-            color: azure;
+            color:  #fff;
             text-transform: uppercase;
             cursor: pointer;
         }
@@ -33,20 +90,20 @@ $main-color: #23abd4;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0px 75px;
+        padding: 0px 50px;
 
         .link {
-            margin: 0 20px;
-            text-decoration:  none;
+            margin: 0 30px;
+            text-decoration: none;
 
 
             a {
-                text-decoration:  none;
-                padding: 5px 0; 
-                font-size: 18px;
+                text-decoration: none;
+                padding: 5px 0px;
+                font-size: 16px;
                 letter-spacing: 3px;
                 text-transform: uppercase;
-                font-weight: 500;
+                font-weight: 700;
                 position: relative;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -56,12 +113,12 @@ $main-color: #23abd4;
                         #fff 50%);
                 background-size: 200% 100%;
                 background-position: -100%;
-                transition: all 0.3s ease-in-out;
+                transition: 0.4s;
 
                 &:before {
                     content: '';
                     width: 0;
-                    height: 2px;
+                    height: 1.5px;
                     bottom: -3px;
                     z-index: 0;
                     position: absolute;
@@ -74,6 +131,8 @@ $main-color: #23abd4;
 
                     &:before {
                         width: 100%;
+
+
                     }
                 }
             }

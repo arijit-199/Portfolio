@@ -1,239 +1,178 @@
-@import url('https://fonts.googleapis.com/css?family=Mukta:700');
+$textColor: #fff;
+$main-color: #0ee8cf;
 
-$bg: rgb(3, 44, 44);
-$white: #fff;
-$black: rgb(3, 44, 44);
-
-@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65, 0, .076, 1)) {
-    transition: $property $duration $ease;
-}
 
 .home {
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
-    top: 115px;
-    height: calc(100vh - 175px);
-    overflow: scroll;
-    gap: 50px;
+    margin: 0;
+    padding: 0px;
 
-    &::-webkit-scrollbar {
-        display: none;
+    @keyframes fadeInUp {
+        from {
+            opacity: 0.6;
+            transform: translateZ(0);
+            will-change: transform, opacity;
+
+        }
+
+        to {
+            opacity: 0.7;
+            transform: translateZ(5px);
+            will-change: transform, opacity;
+        }
+
+        0% {
+            background: url("../../images/header-bg-1.jpg") center;
+            object-fit: cover;
+        }
+
+        25% {
+            background: url("../../images/nature_green_maple_leaves_tree_branches.jpg") center;
+            object-fit: cover;
+        }
+
+        50% {
+            background: url("../../images/pexels-pixabay-531880.jpg") center;
+            object-fit: cover;
+        }
+
+        75% {
+            background: url("../../images/pexels-pixabay-39284.jpg") center;
+            object-fit: cover;
+        }
+
+        100% {
+            background: url("../../images/header-bg-1.jpg") center;
+            object-fit: cover;
+        }
     }
 
-    h1 {
-        color: #000;
-        font-weight: 600;
-        font-size: 90px;
-        font-family: cursive;
+    .wrapper{
+        background: transparent;
+        background-color: aqua;
+        
+        .banner {
+            width: 100%;
+            height: 90vh;
+            margin: 0;
+            padding: 60px;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 10s ease-in-out 5s;
+            box-sizing: content-box;
+            
+            animation-name: fadeInUp;
+            animation-duration: 45s;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            animation-timing-function: ease-in-out;
+        }
+    }
 
+    .greet {
+        position: absolute;
+        top: 205px;
+        left: 180px;
+
+
+        h1 {
+            margin: 0;
+            font-size: 130px;
+            font-weight: 300;
+            color: $textColor;
+            position: sticky;
+            margin-bottom: -12px;
+        }
+
+        span {
+            font-weight: 300;
+        }
+
+        h3 {
+            margin: 0 4px;
+            font-size: 84px;
+            font-weight: 600;
+            color: $textColor;
+        }
+
+        p {
+            margin: 0 8px;
+            font-size: 25px;
+            font-weight: 500;
+            color: $textColor;
+        }
     }
 
     .content {
+        margin-top: -50px;
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        margin-top: 20px;
-        gap: 15px;
+        padding: 180px;
+        gap: 180px;
 
-        .greet {
-            margin: 0px;
-            padding: 0px;
+        .about {
+            width: 60%;
+            color: #fff;
 
-            p {
-                width: 80%;
-                font-size: 30px;
-                font-weight: 400;
-                color: #000;
-                font-family: cursive;
-                line-height: 50px;
-                letter-spacing: 0.5px;
+            h1 {
+                font-size: 50px;
+                color: $main-color;
+                text-transform: uppercase;
+            
             }
 
-            .name {
-                display: flex;
-                justify-content: flex-end;
+            p{
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+
+            .info{
+                margin-top: 30px;
+
+                span{
+                    color: $main-color;
+                    font-size: 20px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
             }
         }
 
         .img {
+            padding: 6px;
             display: flex;
-            background-color: #fff;
-            padding: 4px;
+            justify-content: center;
             align-items: center;
-            border-radius: 50%;
-
-
+            background-color: #fff;
+            position: relative;
+    
             img {
+                margin: 0;
                 width: 400px;
                 height: 400px;
-                object-fit: cover;
-                border-radius: 50%;
-
             }
+
         }
-    }
-
-    .skills {
-        margin: 100px -50px;
-        padding: 20px 40px 120px 50px;
-        display: flex;
-        flex-direction: column;
-        border-top: 1px groove #000;
-        border-bottom: 1px groove #000;
-        background-color: rgba(0, 0, 0, 0.7);
-        gap: 10px;
-
-        h1 {
-            color: #fff;
-        }
-
-        .skill {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-
-            .item {
-                border: 3px solid #fff;
-
-                p {
-                    padding: 10px 20px;
-                    margin: 10px;
-                    color: #fff;
-                    font-size: 30px;
-                    font-weight: 500;
-                    background-color: transparent;
-                    border-radius: 25px;
-                    font-family: cursive;
-                    letter-spacing: 2px;
-                }
-            }
-        }
-    }
-
-    .works {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-
-        .work {
-            display: flex;
-            flex-direction: row;
-            gap: 100px;
-
-            .item {
-                background: linear-gradient(rgba(15, 13, 13, 0.7), rgba(4, 2, 2, 0.7)), url("../../images/pexels-veeterzy-303383.jpg") center;
-                object-fit: cover;
-                width: 350px;
-                height: 320px;
-                border: 3px solid #fff;
-                border-radius: 50px;
-                color: #fff;
-                font-weight: bold;
-                font-size: 28px;
-                font-family: cursive;
-                letter-spacing: 1px;
-                overflow: hidden;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                padding: 5px;
-            }
+        &::after{
+           position: absolute;
+           top: 80px;
+           left: 80px;
+           background: transparent;
+           border: 5px solid $main-color;
         }
 
         button {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-            outline: none;
-            border: 0;
-            vertical-align: middle;
-            text-decoration: none;
-            background: transparent;
-            padding: 0;
-            font-size: inherit;
-            font-family: inherit;
-            letter-spacing: 2px;
-
-            &.see-more {
-                width: 12rem;
-                height: auto;
-
-                .circle {
-                    @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
-                    position: relative;
-                    display: block;
-                    margin: 0;
-                    width: 3rem;
-                    height: 3rem;
-                    background: $black;
-                    border-radius: 1.625rem;
-
-                    .icon {
-                        @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        margin: auto;
-                        background: $white;
-
-                        &.arrow {
-                            @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
-                            left: 0.625rem;
-                            width: 1.125rem;
-                            height: 0.125rem;
-                            background: none;
-
-                            &::before {
-                                position: absolute;
-                                content: '';
-                                top: -0.25rem;
-                                right: 0.0625rem;
-                                width: 0.625rem;
-                                height: 0.625rem;
-                                border-top: 0.125rem solid #fff;
-                                border-right: 0.125rem solid #fff;
-                                transform: rotate(45deg);
-                            }
-                        }
-                    }
-                }
-
-                .button-text {
-                    @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    padding: 0.75rem 0;
-                    margin: 0 0 0 1.85rem;
-                    color: $black;
-                    font-weight: 700;
-                    line-height: 1.6;
-                    text-align: center;
-                    text-transform: uppercase;
-                }
-            }
-
-            &:hover {
-                .circle {
-                    width: 100%;
-
-                    .icon {
-                        &.arrow {
-                            background: $white;
-                            transform: translate(1rem, 0);
-                        }
-                    }
-                }
-
-                .button-text {
-                    color: $white;
-                    letter-spacing: 2px;
-                }
-            }
+            border: none;
+            background-color: #0ee8cf;
+            padding: 20px 40px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
         }
     }
 }

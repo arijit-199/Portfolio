@@ -2,8 +2,14 @@ import "./navbar.scss";
 import { Link } from "react-router-dom"
 
 const Navbar = () => {
+
+  window.addEventListener("scroll", function () {
+    const header = document.getElementById("header");
+    header.classList.toggle("sticky", window.scrollY > 100)
+  })
+
   return (
-    <div className="navbar">
+    <header id="header">
       <div className="left">
         <h1>Arijitdev</h1>
       </div>
@@ -14,7 +20,7 @@ const Navbar = () => {
         <Link className="link"><a href="/profile">About</a></Link>
         <Link className="link"><a href="/profile">Contacts</a></Link>
       </ul>
-    </div>
+    </header>
   )
 }
 
