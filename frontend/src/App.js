@@ -9,10 +9,11 @@ import Profile from "./pages/profile/Profile";
 function App() {
 
   const Layout = () => {
+
     return (
       <div className="layout">
         <Navbar />
-        <Outlet />
+        <Outlet/>
       </div>
     )
   }
@@ -24,7 +25,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />
+          element: <Home />,
         },
         {
           path: "/profile",
@@ -32,7 +33,6 @@ function App() {
         }
       ]
     },
-
   ])
 
   return (

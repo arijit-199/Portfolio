@@ -1,0 +1,55 @@
+$textColor: #fff;
+$main-color: aqua;
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 37.5%;
+    position: relative;
+
+    .skill-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        p{
+            color: $textColor;
+            font-size: 19px;
+            font-weight: 480;
+            margin-bottom: 8px;
+        }
+        .skill-value{
+            color: $textColor;
+            font-size: 18px;
+            font-weight: normal;
+            position: absolute;
+            top: 2%;
+            margin-left: 18px;
+        }
+    }
+
+    .progress-bar-back {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 500px;
+        height: 6px;
+        background-color: #0f1012;
+
+        .progress-bar-front {
+            height: 6px;
+            background-color: $main-color;
+        }
+
+        .dot {
+            margin-left: -1px;
+            width: 12px;
+            height: 12px;
+            border: none;
+            border-radius: 50%;
+            background-color: $main-color;
+        }
+    }
+}
