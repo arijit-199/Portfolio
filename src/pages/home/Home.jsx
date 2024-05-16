@@ -19,7 +19,6 @@ import RoadMapBar from "../../components/road-map-bar/RoadMapBar";
 import RoadMapStart from "../../components/road-map-bar/RoadMapStart";
 import RoadMapEnd from "../../components/road-map-bar/RoadMapEnd";
 import Line from "../../components/road-map-bar/line"
-import { useRef } from "react";
 
 const Home = () => {
 
@@ -36,19 +35,36 @@ const Home = () => {
   const Desc3 = "Completed Secondary Education, from Kalyani Central Model School, with a total 72% marks, (CBSE Board, with having subjects English, Bengali, Physics, Chemitsry and Mathematics";
 
 
-  const expTitle1 = "Frontend Web Developer";
+  const expTitle1 = "Frontend React & React Native Developer";
   const expTitle2 = "React Native Developer";
   const expTitle3 = "React Native Developer";
 
-  const expDetails1 = "May, 2022 - July, 2022, Influx IQ Tech Pvt. Ltd.";
-  const expDetails2 = "Aug, 2022 - Oct, 2022, Influx IQ Tech Pvt. Ltd.";
-  const expDetails3 = "Aug, 2023 - Oct, 2023, Radiant";
+  const expDetails1 = "May, 2022 - Oct, 2022, Influx IQ Pvt. Ltd.";
+  const expDetails2 = "Aug, 2023 - Oct, 2023, Radiant";
+  const expDetails3 = "Jan, 2024 - April, 2024, GS Software Pvt. Ltd.";
 
-  const expDesc1 = "Frontend development of a project with Html, css, sass and javascript using React.";
-  const expDesc2 = "Frontend development of a live mobile application developement project with html, css, and javascript";
-  const expDesc3 = "Frontend as well as backend developement of a project using React Native Framework for frontend, and Node and Express for backend, MySql databse.";
+  const expDesc1 = "Frontend development of a web app using React";
+  const expDesc2 = "Frontend development of an android application using React Native";
+  const expDesc3 = "Frontend and backend developement of a android application using React Native Framework for frontend, and Node and Express for backend, using MongoDb database.";
 
   const arrow = ">";
+
+  const style = {
+    marginTop: -17
+  }
+  const fontWeight = {
+    fontWeight: "500"
+  }
+  const height = {
+    height: 98
+  }
+  const margin = {
+    marginTop: -18,
+    marginBottom: -34
+  }
+  const marginTop = {
+    marginTop: -18
+  }
 
   return (
     <>
@@ -68,7 +84,7 @@ const Home = () => {
           <h3>
             <span>I'm </span>Arijit Ghosh
           </h3>
-          <p>Frontend Developer</p>
+          <p>Fullstack Developer</p>
         </div>
 
         {/* <---Content section---> */}
@@ -87,9 +103,10 @@ const Home = () => {
                 <p><span>Name: </span>Arijit Ghosh</p>
                 <p><span>Date of birth: </span>19 May 1996</p>
                 <p><span>Nationality: </span>Indian</p>
-                <p><span>Address: </span>25/11, R.B Road, Rabindraplli, Naihati-743165, West Benagal, India</p>
+                <p><span>Address: </span>25/11, R.B Road, Rabindrapalli, Naihati-743165, West Benagal, India</p>
                 <p><span>Phone: </span>(+91) 7003993095</p>
                 <p><span>Email: </span>arijitghosh828@gmail.com</p>
+                <p><span>LinkedIn: </span>https://www.linkedin.com/in/arijit-ghosh-1996-abc</p>
               </div>
             </div>
           </div>
@@ -146,14 +163,14 @@ const Home = () => {
               <div className="title">
                 <h1>Frontend</h1>
               </div>
-              <div className="details">
+              <div className="details" style={fontWeight}>
                 <p><span>{arrow}</span>HTML/HTML5</p>
                 <p><span>{arrow}</span>CSS/CSS3</p>
                 <p><span>{arrow}</span>SASS Pre-processor</p>
                 <p><span>{arrow}</span>Javascript(ES6)</p>
-                <p><span>{arrow}</span>Bootsrap</p>
-                <p><span>{arrow}</span>Web Development</p>
-                <p><span>{arrow}</span>Mobile App Development</p>
+                <p><span>{arrow}</span>Bootstrap</p>
+                <p><span>{arrow}</span>Web Development (React, Next)</p>
+                <p><span>{arrow}</span>Mobile Development (React Native)</p>
               </div>
             </div>
 
@@ -166,14 +183,14 @@ const Home = () => {
               <div className="title">
                 <h1>Backend</h1>
               </div>
-              <div className="details">
-                <p><span>{arrow}</span>MySql</p>
+              <div className="details"  style={fontWeight}>
+                <p><span>{arrow}</span>MySql/MongoDB</p>
                 <p><span>{arrow}</span>Node</p>
                 <p><span>{arrow}</span>Express</p>
                 <p><span>{arrow}</span>CRUD Operations</p>
                 <p><span>{arrow}</span>REST API</p>
-                <p><span>{arrow}</span>User/Admin Authentications</p>
-                <p><span>{arrow}</span>Cookies & Tokens</p>
+                <p><span>{arrow}</span>Modern Authentications, Tokens</p>
+                <p><span>{arrow}</span>Cookies & Caches</p>
               </div>
             </div>
           </div>
@@ -183,13 +200,13 @@ const Home = () => {
         <div className="qaulification-section">
           <h1>Education</h1>
           <div className="section">
-            <RoadMapStart logo={<GiGraduateCap />} />
+            <RoadMapStart logo={<GiGraduateCap />} style={height} />
             <RoadMapBar Title={Title1} Details={Details1} Desc={Desc1} />
-            <Line />
+            <Line style={margin}/>
             <RoadMapBar Title={Title2} Details={Details2} Desc={Desc2} />
             <Line />
             <RoadMapBar Title={Title3} Details={Details3} Desc={Desc3} />
-            <Line />
+            <Line style={marginTop}/>
             <RoadMapEnd />
           </div>
         </div>
@@ -202,9 +219,9 @@ const Home = () => {
             <RoadMapBar Title={expTitle1} Details={expDetails1} Desc={expDesc1} />
             <Line />
             <RoadMapBar Title={expTitle2} Details={expDetails2} Desc={expDesc2} />
-            <Line />
+            <Line style={style}/>
             <RoadMapBar Title={expTitle3} Details={expDetails3} Desc={expDesc3} />
-            <Line />
+            <Line style={style}/>
             <RoadMapEnd />
           </div>
         </div>
@@ -215,13 +232,14 @@ const Home = () => {
 
           <div className="skills">
             <div className="skill-row">
-              <ProgressBar skillName={"HTML"} skillValue={"90%"} left={"225%"} />
-              <ProgressBar skillName={"CSS"} skillValue={"90%"} left={"225%"} />
-              <ProgressBar skillName={"Javascript"} skillValue={"80%"} left={"200%"} />
-              <ProgressBar skillName={"sass"} skillValue={"85%"} left={"212.5%"} />
+              <ProgressBar skillName={"HTML, CSS, Sass, Javascript"} skillValue={"90%"} left={"225%"} />
+              <ProgressBar skillName={"React"} skillValue={"90%"} left={"225%"} />
+              <ProgressBar skillName={"React Native"} skillValue={"85%"} left={"212.5%"} />
+              <ProgressBar skillName={"Next"} skillValue={"70%"} left={"200%"} />
             </div>
 
             <div className="skill-row">
+              <ProgressBar skillName={"MongoDB"} skillValue={"70%"} left={"175%"} />
               <ProgressBar skillName={"MySql"} skillValue={"70%"} left={"175%"} />
               <ProgressBar skillName={"Node"} skillValue={"70%"} left={"175%"} />
               <ProgressBar skillName={"Express"} skillValue={"85%"} left={"212.5%"} />
@@ -242,14 +260,14 @@ const Home = () => {
                 <div className="clip-active"></div>
                 <h1 id="number">01.</h1>
                 <h2 id="text">Fullstack developement</h2>
-                <p>HTML, CSS, SASS, Javacsript, Bootstrap for responsive frontend design with clean, and well-documented code. And MySql, Node.js, Express.js for backend, with Jsonwebtoken, user-authentication, setting and clearing cookies.</p>
+                <p>HTML, CSS, SASS, Javacsript, Bootstrap for responsive frontend design with clean, and well-documented code. Frontend Modern technologies like React, React Native, Next. And MySql, MongoDB, Node.js, Express.js for backend, with modern authentication techniques like using jsonwebtoken, setting and clearing cookies.</p>
               </div>
 
               <div className="card">
                 <div className="clip"></div>
                 <h1 id="number">03.</h1>
                 <h2 id="text">Backend developement</h2>
-                <p>Simple to complex CRUD operations, table join, generating and creating Restful API, user-authentication, receiving and sending requests from clients, storing simple to complex data, handling and managing database, using MySql, Node and Express.</p>
+                <p>Simple to complex CRUD operations, table join, generating and creating Restful API, modern-authentication techniques, receiving and sending requests from clients, storing simple to complex data, handling and managing databases, using databases like MongoDB or MySql, and languages like Node and Express.</p>
               </div>
             </div>
           </div>
@@ -261,27 +279,27 @@ const Home = () => {
           <div className="works">
             <div className="work">
               <img src={profileImg} alt="" />
-              <p>Frontend Design</p>
+              <p>Frontend Design (Coming soon)</p>
             </div>
             <div className="work">
               <img src={img2} alt="" />
-              <p>Blog App</p>
+              <p>Blog App (Coming soon)</p>
             </div>
             <div className="work">
               <img src={img3} alt="" />
-              <p>Facebook Clone</p>
+              <p>Facebook Clone (Coming soon)</p>
             </div>
             <div className="work">
               <img src={img4} alt="" />
-              <p>Shopping App</p>
+              <p>Shopping App (Coming soon)</p>
             </div>
             <div className="work">
               <img src={img5} alt="" />
-              <p>E-commerce</p>
+              <p>E-commerce(Coming soon)</p>
             </div>
             <div className="work">
               <img src={img6} alt="" />
-              <p>Blog App</p>
+              <p>Blog App (Coming soon)</p>
             </div>
           </div>
           <button>Load More</button>

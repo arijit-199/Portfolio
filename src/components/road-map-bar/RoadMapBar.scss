@@ -30,7 +30,7 @@ $main-color: aqua;
         position: absolute;
         top: 80px;
         width: 4px;
-        height: 100px;
+        height: 124%;
         background-color: $main-color;
 
     }
@@ -65,7 +65,7 @@ $main-color: aqua;
 
             h1 {
                 color: $main-color;
-                font-size: 26px;
+                font-size: 24px;
                 font-weight: bolder;
                 letter-spacing: 0.5px;
                 text-align: right;
@@ -75,7 +75,7 @@ $main-color: aqua;
 
             p {
                 color: $textColor;
-                font-size: 20px;
+                font-size: 18px;
                 font-weight: normal;
                 letter-spacing: 0.5px;
                 margin: 0;
@@ -125,11 +125,11 @@ $main-color: aqua;
 }
 
 .line {
-    margin-top: -20px;
-    margin-bottom: -20px;
+    margin-top: -34px;
+    margin-bottom: -18px;
     width: 4px;
     background-color: $main-color;
-    height: 200px;
+    height: 198px;
 
 }
 

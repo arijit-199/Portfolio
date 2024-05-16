@@ -1,14 +1,13 @@
 import "./RoadMapBar.scss";
-import { GiGraduateCap } from "react-icons/gi";
 
 
-const RoadMapStart = ({logo}) => {
+const RoadMapStart = ({logo, style}) => {
     return (
         <div className="start">
             <div className="icon-container">
                     {logo}
             </div>
-            <div className="line"></div>
+            <div className="line" style={style}></div>
         </div>
     )
 }

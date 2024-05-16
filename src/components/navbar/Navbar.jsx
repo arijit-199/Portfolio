@@ -17,28 +17,35 @@ const Navbar = (props) => {
 
   const handleGoToProfile = () => {
     window.scrollTo({
-      top: 3000,
+      top: 2900,
       behavior: "smooth",
     })
   };
 
   const handleGoToServices = () => {
     window.scrollTo({
-      top: 2000,
+      top: 1900,
       behavior: "smooth",
     })
   };
 
   const handleGoToWorks = () => {
     window.scrollTo({
-      top: 7010,
+      top: 6900,
       behavior: "smooth",
     })
   };
 
   const handleGoToAbout = () => {
     window.scrollTo({
-      top: 740,
+      top: 660,
+      behavior: "smooth",
+    })
+  };
+
+  const handleGoToContacts = () => {
+    window.scrollTo({
+      top: 660,
       behavior: "smooth",
     })
   };
@@ -65,7 +72,7 @@ const Navbar = (props) => {
         <Link className="link" onClick={handleGoToAbout}>
           <a href="/profile">About</a>
         </Link>
-        <Link className="link">
+        <Link className="link" onClick={handleGoToContacts}>
           <a href="/profile">Contacts</a>
         </Link>
       </ul>
