@@ -84,7 +84,7 @@ const Home = () => {
           <h3>
             <span>I'm </span>Arijit Ghosh
           </h3>
-          <p>Fullstack Developer</p>
+          <p>Fullstack Developer (MERN)</p>
         </div>
 
         {/* <---Content section---> */}
