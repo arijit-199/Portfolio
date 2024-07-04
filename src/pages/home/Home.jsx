@@ -1,6 +1,5 @@
 import "./home.scss";
 import profileImg from "../../images/pexels-veeterzy-303383.jpg";
-import img2 from "../../images/DesktopBackground.jpg";
 import img1 from "../../images/blogapp.png";
 import img3 from "../../images/facebookclone.png";
 import img4 from "../../images/cloudify.png";
