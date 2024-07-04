@@ -1,3 +1,5 @@
+@import "../../style.scss";
+
 $textColor: #fff;
 $main-color: aqua;
 $title-size: 48px;
@@ -29,40 +31,87 @@ $spacing: 0.5px;
 
         to {
             opacity: 0.6;
-            transform: translateZ(10px);
+            transform: translateZ(80px);
             will-change: transform, opacity;
         }
 
         0% {
-            background: url("../../images/header-bg-1.jpg") center;
+            background: url("../../images/flappybird.png") center;
             object-fit: cover;
         }
-
+        
         25% {
-            background: url("../../images/nature_green_maple_leaves_tree_branches.jpg") center;
+            background: url("../../images/cloudify.png") center;
             object-fit: cover;
         }
-
+        
         50% {
-            background: url("../../images/pexels-pixabay-531880.jpg") center;
+            background: url("../../images/blogapp.png") center;
             object-fit: cover;
         }
-
+        
         75% {
-            background: url("../../images/pexels-pixabay-39284.jpg") center;
+            background: url("../../images/facebookclone.png") center;
             object-fit: cover;
         }
 
         100% {
-            background: url("../../images/header-bg-1.jpg") center;
+            background: url("../../images/ras-admin.png") center;
             object-fit: cover;
+        }
+    }
+
+    @include mobile {
+        @keyframes fadeInUp {
+            from {
+                opacity: 0.4;
+                transform: translateZ(0);
+                will-change: transform, opacity;
+
+            }
+
+            to {
+                opacity: 0.6;
+                transform: translateZ(10px);
+                will-change: transform, opacity;
+            }
+
+            0% {
+                background: url("../../images/header-bg-1.jpg") center;
+                object-fit: cover;
+                background-size: 100% 100%;
+            }
+
+            25% {
+                background: url("../../images/nature_green_maple_leaves_tree_branches.jpg") center;
+                object-fit: cover;
+                background-size: 100% 100%;
+            }
+
+            50% {
+                background: url("../../images/pexels-pixabay-531880.jpg") center;
+                object-fit: cover;
+                background-size: 100% 100%;
+            }
+
+            75% {
+                background: url("../../images/pexels-pixabay-39284.jpg") center;
+                object-fit: cover;
+                background-size: 100% 100%;
+            }
+
+            100% {
+                background: url("../../images/header-bg-1.jpg") center;
+                object-fit: cover;
+                background-size: 100% 100%;
+            }
         }
     }
 
     // <---Banner section--->
     .wrapper {
         background: transparent;
-        background-color: #5cecdc;
+        background-color: #9bfbf0;
 
         .banner {
             width: 100%;
@@ -77,12 +126,20 @@ $spacing: 0.5px;
             background-repeat: no-repeat;
             transition: all 4s ease-in-out 0s;
             box-sizing: content-box;
+            filter: blur(4px);
 
             animation-name: fadeInUp;
             animation-duration: 20s;
             animation-iteration-count: infinite;
             animation-play-state: running;
             animation-timing-function: ease-in-out;
+
+
+            @include mobile {
+                padding: 0;
+                width: 100dvw;
+                height: 40dvh;
+            }
         }
     }
 
@@ -92,13 +149,24 @@ $spacing: 0.5px;
         top: 205px;
         left: 180px;
 
+        @include mobile {
+            top: 18dvh;
+            left: 7dvw;
+        }
+
+
         h1 {
             margin: 0;
             font-size: 130px;
             font-weight: 300;
-            color: $textColor;
+            color: rgb(1, 72, 72);
             position: sticky;
             margin-bottom: -12px;
+
+            @include mobile {
+                font-size: 20px;
+                margin-bottom: 0;
+            }
         }
 
         span {
@@ -109,14 +177,26 @@ $spacing: 0.5px;
             margin: 0 4px;
             font-size: 84px;
             font-weight: 600;
-            color: $textColor;
+            color: rgb(2, 98, 98);
+
+            @include mobile {
+                margin: 0;
+                font-size: 22px;
+                font-weight: 400;
+            }
         }
 
         p {
             margin: 0 8px;
             font-size: 25px;
             font-weight: 500;
-            color: $textColor;
+            color: rgb(3, 39, 39);
+
+            @include mobile {
+                margin: 0;
+                font-size: 22px;
+                font-weight: 400;
+            }
         }
     }
 
@@ -128,6 +208,13 @@ $spacing: 0.5px;
         padding: 180px 180px 100px 180px;
         gap: 120px;
 
+        @include mobile {
+            margin-top: 6dvh;
+            padding: 8px;
+            gap: 48px;
+            height: max-content;
+        }
+
         .row {
             display: flex;
             flex-direction: row;
@@ -135,10 +222,24 @@ $spacing: 0.5px;
             align-items: center;
             gap: 180px;
 
+
+            @include mobile {
+                align-items: flex-start;
+                justify-content: inherit;
+                gap: 8px;
+            }
+
             .about {
                 width: 45%;
                 color: #fff;
                 margin-top: -50px;
+
+                @include mobile {
+                    margin-top: 0;
+                    width: 54%;
+                }
+
+
 
                 h1 {
                     font-size: $title-size;
@@ -146,6 +247,11 @@ $spacing: 0.5px;
                     text-transform: uppercase;
                     font-weight: $font-weight;
                     letter-spacing: $spacing;
+
+                    @include mobile {
+                        margin: 0;
+                        font-size: 24px;
+                    }
                 }
 
                 p {
@@ -157,16 +263,49 @@ $spacing: 0.5px;
                 .info {
                     margin-top: 30px;
 
-                    p {
-                        font-weight: 400;
-                        font-size: 20px;
+                    @include mobile {
+                        margin-top: 20px;
+                        margin-left: -42dvw;
+                        max-width: 100dvw;
+                        overflow: hidden;
                     }
 
                     span {
+                        font-weight: 400;
+                        font-size: 20px;
+                        color: white;
+                        text-transform: none;
+
+                        @include mobile {
+                            font-size: 14px;
+                            overflow: hidden;
+                            // max-width: 60dvw;
+                        }
+                    }
+
+                    p {
                         color: $main-color;
                         font-size: 20px;
                         font-weight: 700;
                         text-transform: uppercase;
+                        max-width: 60dvw;
+
+                        @include mobile {
+                            font-size: 16px;
+                            font-weight: 500;
+                        }
+                    }
+
+                    // span{
+                    //     color: white;
+                    // }
+
+                    .link{
+                        cursor: pointer;
+                        color: aqua;
+                    }
+                    .link:hover{
+                        text-decoration: underline;
                     }
                 }
             }
@@ -178,12 +317,23 @@ $spacing: 0.5px;
                 align-items: center;
                 background-color: transparent;
 
+                @include mobile {
+                    margin-top: 45px;
+                    width: 44%;
+                }
+
                 img {
                     margin: 0;
                     width: 405px;
                     height: 417px;
                     position: relative;
                     z-index: 1;
+
+                    @include mobile {
+                        margin-left: -15px;
+                        width: 28dvw;
+                        height: 18dvh;
+                    }
                 }
 
                 .backImg {
@@ -193,6 +343,14 @@ $spacing: 0.5px;
                     bottom: -600px;
                     left: 230px;
                     border: 6px solid $main-color;
+
+                    @include mobile {
+                        width: 28dvw;
+                        height: 18dvh;
+                        top: 56dvh;
+                        left: 10dvw;
+                        border: 4px solid $main-color;
+                    }
                 }
             }
 
@@ -209,15 +367,33 @@ $spacing: 0.5px;
 
                 span {
                     margin-right: 4px;
+
+                    @include mobile {
+                        margin-right: 0;
+                    }
+                }
+
+                @include mobile {
+                    margin-top: 36px;
+                    padding: 12px 16px;
+                    font-size: 16px;
+                    gap: 4px;
                 }
             }
         }
 
         .interest {
+            padding: 0px 125px;
             display: flex;
             flex-direction: column;
             gap: 30px;
-            padding: 0px 125px;
+            overflow: hidden;
+
+            @include mobile {
+                padding: 0px 6px;
+                height: 140px;
+                align-items: flex-start;
+            }
 
             h1 {
                 padding: 0px 12px;
@@ -227,6 +403,13 @@ $spacing: 0.5px;
                 text-transform: uppercase;
                 font-weight: 600;
                 letter-spacing: $spacing;
+
+                @include mobile {
+                    margin: 0;
+                    padding: 0px;
+                    margin-left: 0;
+                    font-size: 26px;
+                }
             }
 
             .icons {
@@ -236,6 +419,12 @@ $spacing: 0.5px;
                 align-items: center;
                 gap: 80px;
 
+                @include mobile {
+                    width: 98%;
+                    gap: 0;
+                    justify-content: space-between;
+                }
+
                 .icon {
                     display: flex;
                     flex-direction: column;
@@ -244,6 +433,11 @@ $spacing: 0.5px;
                     align-content: center;
                     position: relative;
                     gap: 8px;
+
+                    @include mobile {
+                        width: 18%;
+                        gap: 4px;
+                    }
 
                     .item {
                         display: flex;
@@ -258,6 +452,11 @@ $spacing: 0.5px;
                         color: $main-color;
                         font-size: 45px;
                         position: relative;
+
+                        @include mobile {
+                            width: 28px;
+                            height: 28px;
+                        }
 
                         &:hover {
                             border: 1px solid $main-color;
@@ -277,6 +476,12 @@ $spacing: 0.5px;
                         font-size: 30px;
                         width: 120px;
                         height: 90px;
+
+                        @include mobile {
+                            font-size: 14px;
+                            width: 100%;
+                            height: 10px;
+                        }
                     }
                 }
             }
@@ -293,10 +498,8 @@ $spacing: 0.5px;
         margin: 0;
         padding: 120px 0;
 
-        img {
-            padding: 0 40px 40px 40px;
-            width: 60px;
-            height: 60px;
+        @include mobile {
+            padding: 34px 0;
         }
 
         h1 {
@@ -307,6 +510,12 @@ $spacing: 0.5px;
             margin: 0;
             padding: 0;
             margin-bottom: 80px;
+
+            @include mobile {
+                margin: 24px auto;
+                font-size: 24px;
+                font-weight: 500;
+            }
         }
 
         .services {
@@ -317,6 +526,11 @@ $spacing: 0.5px;
             justify-content: center;
             align-items: center;
             gap: 40px;
+
+            @include mobile {
+                flex-direction: column;
+                gap: 12px;
+            }
 
             .service {
                 margin: 0;
@@ -331,6 +545,11 @@ $spacing: 0.5px;
                 width: 460px;
                 position: relative;
                 overflow: hidden;
+
+                @include mobile {
+                    padding: 22px 0;
+                    width: 90%;
+                }
 
                 .corner-shape {
                     display: flex;
@@ -347,6 +566,13 @@ $spacing: 0.5px;
                     padding: 40px;
                     margin: 0;
 
+                    @include mobile {
+                        width: 220px;
+                        height: 220px;
+                        top: -154px;
+                        right: -154px;
+                    }
+
                     .inner-shape {
                         width: 380px;
                         height: 380px;
@@ -356,6 +582,11 @@ $spacing: 0.5px;
                         padding: 40px;
                         margin: 0;
 
+                        @include mobile {
+                            width: 130px;
+                            height: 130px;
+                        }
+
                         .inner-most-shape {
                             width: 300px;
                             height: 300px;
@@ -364,6 +595,11 @@ $spacing: 0.5px;
                             background: transparent;
                             padding: 40px;
                             margin: 0;
+
+                            @include mobile {
+                                width: 40px;
+                                height: 40px;
+                            }
                         }
                     }
                 }
@@ -378,6 +614,11 @@ $spacing: 0.5px;
                     border-bottom-right-radius: 60px;
                     z-index: 999;
 
+                    @include mobile {
+                        margin-top: 12px;
+                        width: 75dvw;
+                    }
+
 
                     h1 {
                         margin: 0;
@@ -385,6 +626,10 @@ $spacing: 0.5px;
                         text-transform: none;
                         color: #fff;
                         padding: 10px 60px;
+
+                        @include mobile {
+                            font-size: 24px;
+                        }
                     }
                 }
 
@@ -395,42 +640,20 @@ $spacing: 0.5px;
                     p {
                         font-size: 18px;
 
+                        @include mobile {
+                            font-size: 16px;
+                            font-weight: 400;
+                        }
+
                         span {
                             margin-right: 25px;
                             color: $main-color;
                         }
                     }
+
+
                 }
             }
-        }
-    }
-
-    // <---Education section--->
-    .qaulification-section {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        padding: 100px 260px;
-        background-color: #313741;
-
-        h1 {
-            text-align: center;
-            padding: 10px 20px;
-            font-size: $title-size;
-            font-weight: $font-weight;
-            color: $main-color;
-            text-transform: uppercase;
-            margin-bottom: 60px;
-        }
-
-        .section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-            margin-bottom: 50px;
         }
     }
 
@@ -442,6 +665,10 @@ $spacing: 0.5px;
         padding: 100px 260px;
         background-color: #22252c;
 
+        @include mobile {
+            padding: 12px;
+        }
+
         h1 {
             text-align: center;
             padding: 10px 20px;
@@ -451,6 +678,12 @@ $spacing: 0.5px;
             letter-spacing: $spacing;
             text-transform: uppercase;
             margin-bottom: 120px;
+
+            @include mobile {
+                font-size: 26px;
+                margin: 32px auto;
+                padding: 10px 0;
+            }
         }
 
         .section {
@@ -461,6 +694,84 @@ $spacing: 0.5px;
             margin: 0;
             padding: 0;
             margin-bottom: 50px;
+
+            @include mobile {
+                display: none;
+            }
+        }
+
+        .mini-section {
+            display: none;
+
+            @include mobile {
+                margin: 0;
+                padding: 12px 8px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 48px;
+                color: #ffffff;
+                font-size: 14px;
+            }
+
+            .each-section {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 10px;
+
+                p {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .name {
+                    margin: 0;
+                    padding: 0;
+                    color: $main-color;
+                    font-style: italic;
+                    font-size: 16px;
+                }
+
+                .projects {
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    gap: 12px;
+
+                    .projectDetails {
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 8px;
+                    }
+                }
+
+                .title {
+                    margin: 0;
+                    padding: 0;
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: $main-color;
+                }
+
+                .italicTxt {
+                    margin: 0;
+                    padding: 0;
+                    font-size: 16px;
+                    color: #fff;
+                }
+            }
+
         }
     }
 
@@ -473,6 +784,10 @@ $spacing: 0.5px;
         align-items: center;
         background-color: transparent;
 
+        @include mobile {
+            padding-top: 30px;
+        }
+
         h1 {
             font-size: 50px;
             font-weight: 600;
@@ -482,6 +797,11 @@ $spacing: 0.5px;
             margin-bottom: 120px;
             letter-spacing: $spacing;
 
+            @include mobile {
+                margin-bottom: 40px;
+                font-size: 26px;
+            }
+
         }
 
         .skills {
@@ -490,6 +810,14 @@ $spacing: 0.5px;
             background-color: #313741;
             gap: 250px;
             padding: 70px 140px;
+
+            @include mobile {
+                padding: 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 60px;
+            }
 
 
             .skill-row {
@@ -510,6 +838,10 @@ $spacing: 0.5px;
                 align-items: center;
                 gap: 0;
                 padding: 20px 0;
+
+            @include mobile {
+                flex-direction: column;
+            }
 
                 .card {
                     display: flex;
@@ -533,6 +865,10 @@ $spacing: 0.5px;
                         top: -60px;
                         left: 160px;
                         z-index: 999;
+
+                        @include mobile {
+                            display: none;
+                        }
                     }
 
                     h1 {
@@ -585,6 +921,10 @@ $spacing: 0.5px;
                         top: -60px;
                         left: 160px;
                         z-index: 1;
+
+                        @include mobile {
+                            display: none;
+                        }
                     }
 
                     h1 {
@@ -614,6 +954,99 @@ $spacing: 0.5px;
                         font-weight: normal;
                     }
                 }
+            }
+        }
+    }
+
+    // <---Education section--->
+    .qaulification-section {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 100px 260px;
+        background-color: #313741;
+
+        @include mobile {
+            display: none;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 10px 20px;
+            font-size: $title-size;
+            font-weight: $font-weight;
+            color: $main-color;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+
+            @include mobile {
+                margin: auto;
+                margin-top: 20px;
+                padding: 0;
+                font-size: 26px;
+            }
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 50px;
+
+            @include mobile {
+                display: none;
+            }
+        }
+    }
+
+    .qualification-content {
+        display: none;
+
+        @include mobile {
+            margin: 0;
+            padding: 18px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 26px;
+            color: white;
+        }
+
+        h1 {
+            margin: 24px auto 12px auto;
+            color: $main-color;
+            text-transform: uppercase;
+        }
+
+        .content {
+            display: none;
+
+            @include mobile {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            h1 {
+                margin: 0;
+                padding: 0;
+                font-size: 18px;
+                color: $main-color;
+            }
+
+            p {
+                margin: 0;
+                padding: 0;
+                font-size: 16px;
+                color: $main-color;
+
             }
         }
     }

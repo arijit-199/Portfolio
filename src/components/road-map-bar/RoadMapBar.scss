@@ -30,7 +30,7 @@ $main-color: aqua;
         position: absolute;
         top: 80px;
         width: 4px;
-        height: 124%;
+        height: 195%;
         background-color: $main-color;
 
     }
@@ -48,6 +48,7 @@ $main-color: aqua;
     position: relative;
 
     .row {
+        // margin-top: -60px;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -62,6 +63,9 @@ $main-color: aqua;
             background-color: transparent;
             text-align: right;
             width: 45%;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
 
             h1 {
                 color: $main-color;
@@ -75,13 +79,12 @@ $main-color: aqua;
 
             p {
                 color: $textColor;
-                font-size: 18px;
+                font-size: 16px;
                 font-weight: normal;
                 letter-spacing: 0.5px;
                 margin: 0;
                 padding: 0;
             }
-
         }
 
         .dot-circle {
@@ -107,8 +110,10 @@ $main-color: aqua;
         .desc {
             width: 45%;
             display: flex;
+            flex-direction: column;
+            align-items: flex-start;
             justify-content: center;
-            align-items: center;
+            gap: 18px;
             text-align: left;
             background-color: transparent;
 
@@ -116,24 +121,34 @@ $main-color: aqua;
                 margin: 0;
                 padding: 0;
                 color: $textColor;
-                font-size: 14px;
+                font-size: 18px;
                 font-weight: normal;
                 background: transparent;
             }
+        }
+
+        .company{
+            margin: 0;
+            padding: 0;
+            color: $main-color;
+            letter-spacing: 0.5px;
+            font-style: italic;
+            font-size: 18px;
         }
     }
 }
 
 .line {
-    margin-top: -34px;
-    margin-bottom: -18px;
+    margin-top: -99px;
+    margin-bottom: -38px;
     width: 4px;
     background-color: $main-color;
-    height: 198px;
+    height: 224px;
 
 }
 
 .end-circle {
+    margin-top: 30px;
     background-color: $main-color;
     width: 20px;
     height: 20px;

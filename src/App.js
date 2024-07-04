@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 // PAGES

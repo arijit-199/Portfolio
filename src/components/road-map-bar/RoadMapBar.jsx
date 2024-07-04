@@ -1,6 +1,6 @@
 import "./RoadMapBar.scss";
 
-const RoadMapBar = ({Title, Details, Desc}) => {
+const RoadMapBar = ({Title, Company, Tenure, Desc1, Desc2, Project1, Project2}) => {
     return (
         <div className="row-main">
             <div className="row">
@@ -9,8 +9,12 @@ const RoadMapBar = ({Title, Details, Desc}) => {
                         {Title}
                     </h1>
 
+                    <p className="company" style={{fontSize: 18, color: "aqua"}}>
+                        {Company}
+                    </p>
+
                     <p>
-                        {Details}
+                        {Tenure}
                     </p>
                 </div>
                 <div className="dot-circle">
@@ -18,8 +22,14 @@ const RoadMapBar = ({Title, Details, Desc}) => {
                 </div>
                 <div className="desc">
                     <p>
-                        {Desc}
+                        {Desc1}
                     </p>
+
+                    <p>
+                        {Desc2}
+                    </p>
+
+                    <p className="company" style={{color: "aqua"}}><span style={{color: "white"}}>Projects done:</span> {Project1}, {Project2}</p>
                 </div>
             </div>
         </div>
